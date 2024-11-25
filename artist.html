@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아티스트 팬 페이지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f1e1c2;
+            color: #643d11;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #643d11;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #643d11;
+        }
+        .artist-section, .fan-page-section {
+            margin-bottom: 40px;
+        }
+        .artist-list {
+            margin-top: 10px;
+        }
+        .artist-item {
+            font-size: 1.2rem;
+            margin: 5px 0;
+        }
+        .fan-corner {
+            margin: 20px 0;
+        }
+        .fan-corner textarea {
+            width: 100%;
+            height: 50px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 좋아하는 아티스트 코너 -->
+    <div class="artist-section">
+        <h1>좋아하는 아티스트</h1>
+        <label for="artist-input">아티스트 이름 입력:</label>
+        <input type="text" id="artist-input" placeholder="아티스트 이름을 입력하세요">
+        <div class="artist-list">
+            <h2>추가된 아티스트</h2>
+            <div class="artist-item">백예린</div>
+            <div class="artist-item">샘김</div>
+            <div class="artist-item">오월오일</div>
+        </div>
+    </div>
+
+    <!-- 팬 페이지 코너 -->
+    <div class="fan-page-section">
+        <h1>팬 페이지</h1>
+
+        <div class="fan-corner">
+            <h2>백예린</h2>
+            <label for="song-baek">오늘 감상한 노래 이름:</label>
+            <input type="text" id="song-baek" placeholder="노래 이름을 입력하세요">
+            <label for="review-baek">감상평:</label>
+            <textarea id="review-baek" placeholder="감상평을 남겨주세요"></textarea>
+        </div>
+
+        <div class="fan-corner">
+            <h2>샘김</h2>
+            <label for="song-sam">오늘 감상한 노래 이름:</label>
+            <input type="text" id="song-sam" placeholder="노래 이름을 입력하세요">
+            <label for="review-sam">감상평:</label>
+            <textarea id="review-sam" placeholder="감상평을 남겨주세요"></textarea>
+        </div>
+
+        <div class="fan-corner">
+            <h2>오월오일</h2>
+            <label for="song-may">오늘 감상한 노래 이름:</label>
+            <input type="text" id="song-may" placeholder="노래 이름을 입력하세요">
+            <label for="review-may">감상평:</label>
+            <textarea id="review-may" placeholder="감상평을 남겨주세요"></textarea>
+        </div>
+    </div>
+</body>
+</html>
