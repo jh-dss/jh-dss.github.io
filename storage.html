@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보관함</title>
+    <style>
+        body {
+            background-color: #f1e1c2;
+            color: #643d11;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            margin-top: 20px;
+        }
+        h2 {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .section {
+            display: inline-block;
+            margin: 20px;
+            vertical-align: top;
+            text-align: left;
+        }
+        .music-list, .playlist {
+            margin-top: 10px;
+        }
+        .music-list ul, .playlist ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .music-list ul li, .playlist ul li {
+            margin: 5px 0;
+        }
+        button {
+            background-color: #643d11;
+            color: #f1e1c2;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #865633;
+        }
+        .form-section {
+            margin-top: 10px;
+        }
+        input[type="text"] {
+            margin: 5px 0;
+            padding: 5px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>보관함</h1>
+
+    <!-- 좋아하는 음악 Section -->
+    <div class="section">
+        <h2>좋아하는 음악</h2>
+        <div class="music-list">
+            <ul id="musicList">
+                <li>음악 1</li>
+                <li>음악 2</li>
+                <li>음악 3</li>
+                <li>음악 4</li>
+                <li>음악 5</li>
+            </ul>
+           
+        </div>
+    </div>
+
+    <!-- 음악 입력 Section -->
+    <div class="section">
+        <h2>음악 입력</h2>
+        <div class="form-section">
+            <form id="musicForm">
+                <input type="text" id="songTitle" placeholder="음악 제목" /><br />
+                <input type="text" id="artistName" placeholder="가수 이름" /><br />
+                <button type="button" onclick="addMusic()">추가</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 재생목록 Section -->
+    <div class="section">
+        <h2>재생목록</h2>
+        <div class="playlist">
+            <ul>
+                <li>재생목록 1</li>
+                <li>재생목록 2</li>
+                <li>재생목록 3</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // 더보기 버튼 기능
+        const musicList = document.getElementById("musicList");
+        const moreMusic = ["음악 6", "음악 7", "음악 8", "음악 9", "음악 10"];
+        let musicIndex = 0;
+
+        function loadMoreMusic() {
+            for (let i = 0; i < 2 && musicIndex < moreMusic.length; i++, musicIndex++) {
+                const li = document.createElement("li");
+                li.textContent = moreMusic[musicIndex];
+                musicList.appendChild(li);
+            }
+        }
+
+        // 음악 추가 기능
+        function addMusic() {
+            const songTitle = document.getElementById("songTitle").value;
+            const artistName = document.getElementById("artistName").value;
+
+            if (songTitle && artistName) {
+                const li = document.createElement("li");
+                li.textContent = `${songTitle} - ${artistName}`;
+                musicList.appendChild(li);
+
+                // 입력값 초기화
+                document.getElementById("songTitle").value = "";
+                document.getElementById("artistName").value = "";
+            } else {
+                alert("음악 제목과 가수 이름을 입력해주세요!");
+            }
+        }
+    </script>
+</body>
+</html>
